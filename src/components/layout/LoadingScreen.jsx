@@ -1,7 +1,4 @@
-"use client"
-
 import { useEffect, useState } from "react"
-import { Spinner } from "@/components/ui/spinner"
 
 export default function LoadingScreen({ onComplete, duration = 3000 }) {
   const [isVisible, setIsVisible] = useState(true)
@@ -9,22 +6,29 @@ export default function LoadingScreen({ onComplete, duration = 3000 }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false)
-      onComplete()
+      onComplete?.()
     }, duration)
-
     return () => clearTimeout(timer)
   }, [onComplete, duration])
 
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background">
-      <div className="flex flex-col items-center gap-6">
-        <Spinner className="h-12 w-12 text-primary" />
-        <p className="text-xl md:text-2xl font-medium text-foreground animate-pulse">
-          Loading...
-        </p>
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-sky-400 via-pink-300 to-yellow-300 animate-fadeIn">
+      <div className="relative">
+        <div className="w-20 h-20 border-8 border-white border-t-transparent rounded-full animate-spin"></div>
+        <div className="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold">
+          🧠
+        </div>
       </div>
+
+      <h1 className="mt-6 text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg animate-bounce">
+        BrainBoost
+      </h1>
+
+      <p className="mt-3 text-white/90 text-lg font-medium animate-pulse">
+        Loading...
+      </p>
     </div>
   )
 }

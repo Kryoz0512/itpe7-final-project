@@ -21,14 +21,14 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section className="px-4 py-16 bg-muted/30">
+    <section className="bg-purple-50 px-4 py-16">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="border-border/50">
+            <Card key={index} className="bg-gradient-to-b from-blue-100 hover:border-purple-500 border-border/50">
               <CardContent className="pt-6 text-center space-y-3">
-                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mx-auto">
-                  <feature.icon className="w-12 h-12 text-black" />
+                <div className="w-15 h-15 flex items-center justify-center mx-auto">
+                  <feature.icon className="rounded-4xl w-12 h-12 text-purple-900" />
                 </div>
                 <h3 className="font-semibold text-lg">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
