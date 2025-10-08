@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { FaBrain } from "react-icons/fa6";
 
 export default function LoadingScreen({ onComplete, duration = 3000 }) {
   const [isVisible, setIsVisible] = useState(true)
@@ -17,8 +18,8 @@ export default function LoadingScreen({ onComplete, duration = 3000 }) {
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-sky-400 via-pink-300 to-yellow-300 animate-fadeIn">
       <div className="relative">
         <div className="w-20 h-20 border-8 border-white border-t-transparent rounded-full animate-spin"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold">
-          🧠
+        <div className="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold animate-spin">
+          <FaBrain />
         </div>
       </div>
 

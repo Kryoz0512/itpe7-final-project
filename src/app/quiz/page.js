@@ -11,13 +11,14 @@ import Footer from "@/components/layout/Footer"
 export default function QuizPage() {
   const [isLoading, setIsLoading] = useState(true)
 
+  if (isLoading) {
+    return <LoadingScreen onComplete={()=> setIsLoading(false)}/>
+  }
   return (
     <>
-      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
       <div className="min-h-screen flex flex-col">
         <Header />
-
         <main className="flex-1 flex items-center justify-center px-4 py-12">
           <div className="max-w-2xl w-full text-center space-y-8">
             <div className="space-y-4">

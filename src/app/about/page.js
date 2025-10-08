@@ -69,7 +69,7 @@ export default function About() {
           {developers.map((dev, index) => (
             <Card
               key={index}
-              className="bg-transparent border- hover:border-purple-500 cursor-pointer transition"
+              className="bg-transparent border-3 hover:border-purple-500 cursor-pointer transition"
             >
               <CardContent className="pt-6 text-center">
                 {dev.image ? (

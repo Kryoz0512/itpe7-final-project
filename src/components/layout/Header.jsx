@@ -28,10 +28,10 @@ export default function Header() {
           <Link href="/about" className="hover:text-pink-300 transition">
             About
           </Link>
-          <Link href="" className="hover:text-pink-300 transition">
+          <Link href="/" className="hover:text-pink-300 transition">
             History
           </Link>
-          <Link href="" className="hover:text-pink-300 transition">
+          <Link href="/" className="hover:text-pink-300 transition">
             Contact
           </Link>
         </nav>
