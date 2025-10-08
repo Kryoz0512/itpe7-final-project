@@ -21,22 +21,35 @@ export default function FeaturesSection() {
   ]
 
   return (
-    <section className="bg-purple-50 px-4 py-16">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <Card key={index} className="bg-gradient-to-b from-blue-100 hover:border-purple-500 border-border/50">
-              <CardContent className="pt-6 text-center space-y-3">
-                <div className="w-15 h-15 flex items-center justify-center mx-auto">
-                  <feature.icon className="rounded-4xl w-12 h-12 text-purple-900" />
-                </div>
-                <h3 className="font-semibold text-lg">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+    <section
+  className="relative px-4 py-16 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/homebg.jpg')",
+  }}
+>
+  <div className="absolute inset-0 bg-black/30" /> 
+  
+  <div className="relative max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {features.map((feature, index) => (
+        <Card
+          key={index}
+          className="bg-white/10 backdrop-blur-md border border-white/20 hover:border-purple-300 transition-all"
+        >
+          <CardContent className="pt-6 text-center space-y-3 text-white">
+            <div className="w-15 h-15 flex items-center justify-center mx-auto">
+              <feature.icon className="rounded-4xl w-12 h-12 text-purple-400" />
+            </div>
+            <h3 className="font-semibold text-lg">{feature.title}</h3>
+            <p className="text-sm leading-relaxed text-gray-200">
+              {feature.description}
+            </p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
   )
 }

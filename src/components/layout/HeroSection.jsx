@@ -1,34 +1,55 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Brain } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Press_Start_2P } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+
+const pressStart2P = Press_Start_2P({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export default function HeroSection() {
   return (
-    <section className="bg-purple-50 px-4 py-16 md:py-24 lg:py-32">
-      <div className="max-w-6xl mx-auto text-center space-y-8">
-        <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary-foreground text-xl font-medium mb-4">
-            <Brain className="w-10 h-10 text-purple-900" />
-          <h1 className="text-purple-800">Train Your Brain Daily</h1>
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-purple-700 tracking-tight text-balance">
-            Challenge Your Mind
+    <section
+      className="relative px-4 pt-24 pb-0 min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/images/homeBG.png')",
+      }}
+    >
+      <div className="absolute inset-0" />
+
+      <div className="relative max-w-6xl mx-auto text-center space-y-8 z-10">
+        <div className="space-y-6">
+          <h1
+            className={`${pressStart2P.className} text-3xl md:text-7xl lg:text-7xl font-bold text-white tracking-widest`}
+            style={{ textShadow: "4px 4px 0 #ec4899" }}
+          >
+            BRAIN BLITZ
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-pretty leading-relaxed text-purple-950">
-            Boost your cognitive skills with our collection of engaging brain games designed to enhance memory, focus,
-            and problem-solving abilities
+
+          <p
+            className={`${geistMono.className} mt-6 font-semibold text-sm md:text-base text-white uppercase tracking-[0.5em]`}
+          >
+            Your Daily Dose of Brain Power.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-          <Button asChild size="lg" className="bg-purple-900 w-full sm:w-auto min-w-[200px] text-base hover:bg-purple-950">
-            <Link href="/quiz">Play Quiz Game</Link>
-          </Button>
-          <Button asChild size="lg" variant="secondary" className="bg-pink-900 w-full sm:w-auto min-w-[200px] text-white hover:bg-pink-950 ">
-            <Link href="/mindgame">Play Mind Game</Link>
+        <div className="pt-8">
+          <Button
+            asChild
+            size="lg"
+            className="bg-pink-900 hover:bg-pink-950 min-w-[200px] text-xs tracking-wider font-semibold"
+          >
+            <Link href="">GET STARTED</Link>
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
