@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MdGamepad } from "react-icons/md";
+import { Gamepad2 } from 'lucide-react';
 import { Geist } from "next/font/google";
 
 const geistSans = Geist({
@@ -12,7 +12,7 @@ export default function Header() {
     <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-6">
         <div className="flex items-center gap-2">
-          <MdGamepad className="size-15 text-white" />
+          <Gamepad2 className="size-15 text-white" />
           <Link
             href="/"
             className={`${geistSans.className} text-white font-bold text-2xl tracking-tight`}
@@ -28,8 +28,8 @@ export default function Header() {
           <Link href="/about" className="hover:text-pink-300 transition">
             About
           </Link>
-          <Link href="/" className="hover:text-pink-300 transition">
-            History
+          <Link href="/games" className="hover:text-pink-300 transition">
+            Games
           </Link>
           <Link href="/" className="hover:text-pink-300 transition">
             Contact

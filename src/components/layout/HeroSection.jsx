@@ -46,7 +46,7 @@ export default function HeroSection() {
             size="lg"
             className="bg-pink-900 hover:bg-pink-950 min-w-[200px] text-xs tracking-wider font-semibold"
           >
-            <Link href="/quiz">GET STARTED</Link>
+            <Link href="/games">GET STARTED</Link>
           </Button>
         </div>
       </div>

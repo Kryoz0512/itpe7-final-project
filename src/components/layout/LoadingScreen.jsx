@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { FaBrain } from "react-icons/fa6";
+import { Brain } from 'lucide-react';
 
 export default function LoadingScreen({ onComplete, duration = 3000 }) {
   const [isVisible, setIsVisible] = useState(true)
@@ -19,7 +19,7 @@ export default function LoadingScreen({ onComplete, duration = 3000 }) {
       <div className="relative">
         <div className="w-20 h-20 border-8 border-white border-t-transparent rounded-full animate-spin"></div>
         <div className="absolute inset-0 flex items-center justify-center text-white text-2xl font-bold animate-spin">
-          <FaBrain />
+          <Brain />
         </div>
       </div>
 
