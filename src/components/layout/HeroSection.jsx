@@ -3,13 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Press_Start_2P } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import PageTransition from "./PageTransition";
-import * as motion from "motion/react-client"
+import * as motion from "motion/react-client";
 
 const pressStart2P = Press_Start_2P({
   subsets: ["latin"],
   weight: "400",
 });
-
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -18,15 +17,8 @@ const geistMono = Geist_Mono({
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative px-4 pt-24 pb-0 min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/images/homeBG.png')",
-      }}
-    >
+    <section className="relative px-4 pt-24 pb-0 min-h-screen flex items-center justify-center bg-[url('/images/homeBG.png')] bg-cover bg-center bg-no-repeat">
       <PageTransition>
-
-
         <div className="absolute inset-0" />
 
         <div className="relative max-w-6xl mx-auto text-center space-y-8 z-10">
@@ -48,7 +40,8 @@ export default function HeroSection() {
           <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="pt-8">
+            className="pt-8"
+          >
             <Button
               asChild
               size="lg"
