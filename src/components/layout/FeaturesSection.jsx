@@ -40,7 +40,7 @@ export default function FeaturesSection() {
               key={index}
               className="bg-white/10 backdrop-blur-md border border-white/20 hover:border-purple-300 transition-all"
             >
-              <CardContent className="pt-6 text-center space-y-3 text-white">
+              <CardContent className="pt-6 text-center space-y-3 text-white shadow-amber-50">
                 <div className="w-15 h-15 flex items-center justify-center mx-auto">
                   <feature.icon className="rounded-4xl w-12 h-12 text-purple-400" />
                 </div>
