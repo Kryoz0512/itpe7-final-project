@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Brain, Zap, Target } from "lucide-react"
+import * as motion from "motion/react-client"
 
 export default function FeaturesSection() {
   const features = [
@@ -30,7 +31,10 @@ export default function FeaturesSection() {
       <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div
+          initial={{ opacity: 0, scale:0 }}
+          whileInView={{ opacity: 1, scale:1}}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Card
               key={index}
@@ -47,7 +51,7 @@ export default function FeaturesSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
 

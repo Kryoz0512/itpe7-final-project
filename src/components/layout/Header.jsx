@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Gamepad2 } from 'lucide-react';
 import { Geist } from "next/font/google";
+import * as motion from "motion/react-client"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

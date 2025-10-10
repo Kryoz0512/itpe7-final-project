@@ -32,9 +32,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.variable} antialiased`}
       >
         <Header />
-        <main>
-          {children}
-        </main>
+          <main>
+            {children}
+          </main>
         <Footer />
       </body>
     </html>
