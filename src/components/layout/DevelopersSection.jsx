@@ -53,16 +53,24 @@ export default function DevelopersSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden:{ opacity: 0},
+          visible:{
+            opacity:1,
+            transition:{staggerChildren:0.2}
+          }
+        }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {developers.map((dev, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 250 }}
+              variants={{
+                hidden:{opacity:0, y:40},
+                visible:{opacity:1, y:0}
+              }}
             >
               <Card className="bg-transparent border p-10 hover:border-pink-700 cursor-pointer transition">
                 <CardContent className="pt-6 text-center">

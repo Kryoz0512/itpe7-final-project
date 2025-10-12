@@ -2,24 +2,27 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Brain, Zap, Target } from "lucide-react"
 import * as motion from "motion/react-client"
 
+const features = [
+  {
+    icon: Brain,
+    title: "Enhance Memory",
+    description: "Improve your memory retention and recall with scientifically designed challenges",
+  },
+  {
+    icon: Zap,
+    title: "Boost Focus",
+    description: "Sharpen your concentration and attention span through engaging exercises",
+  },
+  {
+    icon: Target,
+    title: "Problem Solving",
+    description: "Develop critical thinking skills with puzzles that challenge your logic",
+  },
+]
+
 export default function FeaturesSection() {
-  const features = [
-    {
-      icon: Brain,
-      title: "Enhance Memory",
-      description: "Improve your memory retention and recall with scientifically designed challenges",
-    },
-    {
-      icon: Zap,
-      title: "Boost Focus",
-      description: "Sharpen your concentration and attention span through engaging exercises",
-    },
-    {
-      icon: Target,
-      title: "Problem Solving",
-      description: "Develop critical thinking skills with puzzles that challenge your logic",
-    },
-  ]
+
+
 
   return (
     <section
@@ -32,8 +35,9 @@ export default function FeaturesSection() {
 
       <div className="relative max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, scale:0 }}
-          whileInView={{ opacity: 1, scale:1}}
+          initial={{scale: 0, opacity: 0}}
+          whileInView={{scale:1, opacity:1}}
+          transition={{duration:0.2}}
           className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Card

@@ -5,8 +5,15 @@ import React from 'react'
 export default function Loading() {
 
     return (
-        <div>
-            <Skeleton className="h-[200px] w-[100px] rounded-full" />
-        </div>
+        <main className='flex items-center justify-center'>
+            <div className="flex items-center space-x-4">
+                <div className="flex gap-10 opacity-9">
+                    <Skeleton className="w-72 h-80" />
+                    <Skeleton className="w-72 h-80" />
+                    <Skeleton className="w-72 h-80" />
+                    <Skeleton className="w-72 h-80" />
+                </div>
+            </div>
+        </main>
     )
 }

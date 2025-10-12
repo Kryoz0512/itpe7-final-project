@@ -5,6 +5,7 @@ import FeaturesSection from "@/components/layout/FeaturesSection"
 
 
 export default function HomePage() {
+
   return (
     <>
       <HeroSection />

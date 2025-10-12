@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Press_Start_2P } from "next/font/google";
@@ -39,13 +41,14 @@ export default function HeroSection() {
 
           <motion.div
             whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.9,}}
             className="pt-8"
           >
             <Button
               asChild
               size="lg"
               className="bg-pink-900 hover:bg-pink-950 min-w-[200px] text-xs tracking-wider font-semibold"
+              onClick={()=> console.log("Clicked")}
             >
               <Link href="/games">GET STARTED</Link>
             </Button>
