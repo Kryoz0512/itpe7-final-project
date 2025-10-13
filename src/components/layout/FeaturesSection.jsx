@@ -26,34 +26,44 @@ export default function FeaturesSection() {
 
   return (
     <section
-      className="relative px-4 py-16 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/images/homebg.jpg')",
-      }}
+      className="relative px-4 py-16 bg-[url(/images/homebg.jpg)] bg-cover bg-center bg-no-repeat "
     >
-      <div className="absolute inset-0 bg-black/30" />
 
-      <div className="relative max-w-6xl mx-auto">
+      <div
+        className="relative max-w-6xl mx-auto ">
         <motion.div
-          initial={{scale: 0, opacity: 0}}
-          whileInView={{scale:1, opacity:1}}
-          transition={{duration:0.2}}
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 },
+            }
+          }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="bg-white/10 backdrop-blur-md border border-white/20 hover:border-purple-300 transition-all"
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
             >
-              <CardContent className="pt-6 text-center space-y-3 text-white shadow-amber-50">
-                <div className="w-15 h-15 flex items-center justify-center mx-auto">
-                  <feature.icon className="rounded-4xl w-12 h-12 text-purple-400" />
-                </div>
-                <h3 className="font-semibold text-lg">{feature.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-200">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
+              <Card
+                className="bg-white/10 backdrop-blur-md border border-white/20 hover:border-purple-300 transition-all"
+              >
+                <CardContent className="pt-6 text-center space-y-3 text-white shadow-amber-50">
+                  <div className="w-15 h-15 flex items-center justify-center mx-auto">
+                    <feature.icon className="rounded-4xl w-12 h-12 text-purple-400" />
+                  </div>
+                  <h3 className="font-semibold text-lg">{feature.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-200">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </motion.div>
       </div>
