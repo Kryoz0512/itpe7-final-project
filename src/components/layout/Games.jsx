@@ -32,12 +32,12 @@ const Games = [
     {
         img: "/file.svg",
         link: "/",
-        title: "Coming Soon",
+        title: "Trolly",
     },
     {
         img: "/file.svg",
         link: "/",
-        title: "Coming Soon",
+        title: "",
     },
         {
         img: "/file.svg",
