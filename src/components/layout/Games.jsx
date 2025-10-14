@@ -10,34 +10,34 @@ import {
 
 const Games = [
     {
-        img: "/",
+        img: "/images/mind_game.png",
         link: "/games/mindgame",
         title: "Mind Game",
     },
     {
-        img: "/images/quizlogo.png",
+        img: "/images/quiz_game.png",
         link: "/games/quiz",
         title: "Quiz Challenge",
     },
     {
-        img: "/images/sequence.png",
+        img: "/images/sequence_memory.png",
         link: "/games/sequence",
         title: "Sequence Puzzle",
     },
     {
-        img: "/file.svg",
+        img: "/images/typing_game.png",
         link: "/games/typing",
         title: "Typing Game",
     },
     {
-        img: "/file.svg",
+        img: "/images/trolley_game.png",
         link: "/",
-        title: "Trolly",
+        title: "Trolley",
     },
     {
         img: "/file.svg",
         link: "/",
-        title: "",
+        title: "Coming Soon",
     },
         {
         img: "/file.svg",
@@ -83,7 +83,7 @@ export default function GamesPage() {
                                 <motion.img
                                     src={game.img}
                                     alt={game.title}
-                                    className="w-32 h-32 object-contain mb-6"
+                                    className="w-50 h-50 object-contain mb-6"
                                 />
                                 <h2 className="text-xl font-semibold text-white group-hover:text-pink-300 transition-colors">
                                     {game.title}
