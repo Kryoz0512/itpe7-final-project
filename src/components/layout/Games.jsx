@@ -31,7 +31,7 @@ const Games = [
     },
     {
         img: "/images/trolley_game.png",
-        link: "/",
+        link: "/games/trolley",
         title: "Trolley",
     },
     {
