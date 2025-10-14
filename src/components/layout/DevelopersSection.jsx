@@ -67,6 +67,7 @@ export default function DevelopersSection() {
           {developers.map((dev, index) => (
             <motion.div
               key={index}
+              whileHover={{scale:1.1}}
               variants={{
                 hidden:{opacity:0, y:40},
                 visible:{opacity:1, y:0}
