@@ -26,8 +26,8 @@ const Games = [
     },
     {
         img: "/file.svg",
-        link: "/",
-        title: "Coming Soon",
+        link: "/games/typing",
+        title: "Typing Game",
     },
     {
         img: "/file.svg",
