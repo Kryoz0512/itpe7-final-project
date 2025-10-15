@@ -35,9 +35,9 @@ const Games = [
         title: "Trolley",
     },
     {
-        img: "/file.svg",
-        link: "/",
-        title: "Coming Soon",
+        img: "/images/high_low.png",
+        link: "/games/high-low",
+        title: "High-Low",
     },
         {
         img: "/file.svg",
