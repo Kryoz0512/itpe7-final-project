@@ -17,7 +17,7 @@ export default function GuessNumberGame() {
   const handleGuess = () => {
     const userGuess = parseInt(guess);
     if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
-      setMessage("⚠️ Please enter a valid number between 1 and 100!");
+      setMessage("Please enter a valid number between 1 and 100!");
       return;
     }
 
@@ -25,12 +25,12 @@ export default function GuessNumberGame() {
     setHistory(prev => [...prev, userGuess]);
 
     if (userGuess === target) {
-      setMessage(`🎉 Correct! The number was ${target}.`);
+      setMessage(`Correct! The number was ${target}.`);
       setIsGameOver(true);
     } else if (userGuess < target) {
-      setMessage("📉 Too low! Try a higher number.");
+      setMessage("Too low! Try a higher number.");
     } else {
-      setMessage("📈 Too high! Try a lower number.");
+      setMessage("Too high! Try a lower number.");
     }
 
     setGuess("");
@@ -128,7 +128,7 @@ export default function GuessNumberGame() {
                   className="space-y-4"
                 >
                   <p className="text-lg font-medium text-green-600">
-                    ✅ You guessed the number <span className="font-bold">{target}</span> in{" "}
+                    You guessed the number <span className="font-bold">{target}</span> in{" "}
                     <span className="font-bold">{attempts}</span> tries!
                   </p>
                   <Button
