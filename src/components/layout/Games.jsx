@@ -41,8 +41,8 @@ const Games = [
     },
         {
         img: "/file.svg",
-        link: "/",
-        title: "Coming Soon",
+        link: "/games/sudoku",
+        title: "Sudoku",
     },
         {
         img: "/file.svg",

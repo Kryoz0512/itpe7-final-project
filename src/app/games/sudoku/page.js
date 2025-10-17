@@ -1,9 +1,11 @@
+"use client"
 
+import SudokuGame from "@/components/sudoku/SudokuGame"
 
 export default function Sudoku() {
     return(
         <>
-            <h1>Sudoku Game</h1>
+            <SudokuGame/>
         </>
     )
 }
