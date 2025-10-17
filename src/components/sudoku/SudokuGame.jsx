@@ -1,4 +1,9 @@
     import { useState, useEffect } from "react";
+import NumberPanel from "./NumberPanel";
+import NewGameButton from "./NewGameButton";
+import Board from "./Board";
+import TitleHearts from "./TitleHearts";
+import WinNotification from "./WinNotification";
 
     export default function SudokuGame() {
     const board3x3 = Array.from(new Array(9), () => Array(9).fill(0));
@@ -51,7 +56,7 @@
     // remove some number cells from the board
     function makeGame(board) {
         const game = board.map((row) => [...row]);
-        let removeCount = 45;
+        let removeCount = 40;
         while (removeCount > 0) {
         const r = Math.floor(Math.random() * 9);
         const c = Math.floor(Math.random() * 9);
@@ -91,78 +96,34 @@
         row.every((val, c) => val === board[r][c])
     );
 
-    // number buttons
-    const numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3];
-
     return (
         <div className="flex flex-col items-center text-white p-6 space-y-4">
-        <h1 className="text-3xl font-bold mb-2">SUDOKU!</h1>
-        <div className="text-xl mb-2">
-            {hearts > 0 ? "❤️".repeat(hearts) : "Game Over"}
-        </div>
+            <TitleHearts hearts={hearts} />
 
-        <div className="flex items-center space-x-6">
-        
-            <div className="flex flex-col items-center bg-black/20 p-2 border-2 border-white rounded-lg">
-            {game.map((row, r) => (
-                <div key={r} className="flex">
-                {row.map((cell, c) => {
-                    const isSelected =
-                    selectedCell && selectedCell.row === r && selectedCell.col === c;
-                    const isPrefilled = cell !== 0;
-                    return (
-                    <div
-                        key={c}
-                        onClick={() =>
-                        !isPrefilled && setSelectedCell({ row: r, col: c })
-                        }
-                        className={`h-10 w-10 flex justify-center items-center border text-lg font-bold cursor-pointer transition-all
-                        ${isPrefilled ? "text-white" : "text-white"}
-                        ${isSelected ? "bg-[#aa01ff]" : "bg-black/20"}
-                        border-white`}
-                    >
-                        {cell !== 0 ? cell : ""}
-                    </div>
-                    );
-                })}
-                </div>
-            ))}
+            <div className="flex items-center space-x-6">
+            
+                <Board game={game} selectedCell={selectedCell} setSelectedCell={setSelectedCell} />
+
+                <NumberPanel handleNumberClickFunction={handleNumberClick}/>
+                
             </div>
 
-            {/* Numbers Panel with Flex */}
-            <div className="flex flex-col h-38 bg-black/20 p-2 rounded-lg border border-white">
-            {[0, 1, 2].map((rowIdx) => (
-                <div key={rowIdx} className="flex space-x-2 mb-2">
-                {numbers.slice(rowIdx * 3, rowIdx * 3 + 3).map((num) => (
-                    <button
-                    key={num}
-                    onClick={() => handleNumberClick(num)}
-                    className="border-2 border-white rounded-lg px-3 py-1 text-xl hover:bg-white hover:text-black transition"
-                    >
-                    {num}
-                    </button>
-                ))}
-                </div>
-            ))}
-            </div>
-        </div>
+            <WinNotification isWinVariable={isWin} />
 
-        {isWin && (
-            <div className="text-2xl mt-4 text-green-400">You Win!</div>
-        )}
+            <NewGameButton 
 
-        <button
-            onClick={() => {
-            const full = generateBoard();
-            const game = makeGame(full);
-            setBoard(full);
-            setGame(game);
-            setHearts(3);
-            }}
-            className="mt-4 border-2 border-white px-6 py-2 rounded-xl hover:bg-white hover:text-black transition"
-        >
-            New Game
-        </button>
+                title={"New Game"}
+
+                onClick={() => {
+                const full = generateBoard();
+                const game = makeGame(full);
+                setBoard(full);
+                setGame(game);
+                setHearts(3);
+                }} 
+                
+            />
+
         </div>
     );
-    }
+}
