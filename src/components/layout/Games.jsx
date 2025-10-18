@@ -40,7 +40,7 @@ const Games = [
         title: "High-Low",
     },
         {
-        img: "/sudoku..png",
+        img: "/images/sudoku.png",
         link: "/games/sudoku",
         title: "Sudoku",
     },
