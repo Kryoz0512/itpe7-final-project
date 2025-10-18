@@ -40,14 +40,14 @@ const Games = [
         title: "High-Low",
     },
         {
-        img: "/file.svg",
+        img: "/sudoku..png",
         link: "/games/sudoku",
         title: "Sudoku",
     },
         {
-        img: "/file.svg",
-        link: "/",
-        title: "Coming Soon",
+        img: "/images/binary_game.png",
+        link: "/games/binarygame",
+        title: "Binary game",
     },
 
 ]
