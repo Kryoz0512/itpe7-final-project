@@ -8,6 +8,8 @@ export default function GuessInput({ guess, onGuessChange, onSubmit, onRestart }
   return (
     <div className="space-y-4">
       <Input
+        min={1}
+        max={100}
         type="number"
         value={guess}
         onChange={(e) => onGuessChange(e.target.value)}

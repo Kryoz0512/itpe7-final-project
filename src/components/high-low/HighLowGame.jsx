@@ -31,7 +31,8 @@ export default function HighLowGame() {
   const handleGuess = () => {
     const userGuess = parseInt(guess);
     if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
-      setMessage("Please enter a valid number between 1 and 100!");
+      setMessage("⚠️ Please enter a valid number between 1 and 100!");
+      setGuess("");
       return;
     }
 
@@ -96,8 +97,8 @@ export default function HighLowGame() {
           className="space-y-5"
         >
           <p className="text-lg font-medium text-green-300">
-            You guessed the number <span className="font-bold">{target}</span> in{" "}
-            <span className="font-bold">{attempts}</span> tries!
+            You guessed the number <span className="font-bold">{target}</span>{" "}
+            in <span className="font-bold">{attempts}</span> tries!
           </p>
           <Button
             onClick={handleRestart}
