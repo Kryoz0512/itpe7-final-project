@@ -1,9 +1,10 @@
 "use client";
 
+import GameMode from "@/components/binary/GameMode";
 import { useEffect, useRef, useState } from "react";
 
 export default function BinaryGame() {
-  const [mode, setMode] = useState(null);
+  const [mode, setMode] = useState(null); // 'practice8', 'practice4', 'timed8_10', 'timed4_15', 'timed4_10', 'timed8_15'
   const [target, setTarget] = useState(0);
   const [bitLength, setBitLength] = useState(8);
   const [guess, setGuess] = useState("");
@@ -19,7 +20,7 @@ export default function BinaryGame() {
   useEffect(() => {
     if (mode) {
       generateTarget();
-      if (mode !== "practice") startTimer();
+      if (!mode.startsWith("practice")) startTimer();
     }
     return () => clearInterval(timerRef.current);
   }, [mode]);
@@ -91,7 +92,7 @@ export default function BinaryGame() {
       clearInterval(timerRef.current);
       setTimeout(() => {
         generateTarget();
-        if (mode !== "practice") startTimer();
+        if (!mode.startsWith("practice")) startTimer();
       }, 5000);
     } else {
       setStreak(0);
@@ -117,54 +118,9 @@ export default function BinaryGame() {
 
   if (!mode) {
     return (
-        <div className="w-full max-w-sm rounded-2xl shadow-lg bg-white p-6 text-center">
-          <h1 className="text-2xl font-bold mb-4">Choose Game Mode</h1>
-          <button
-            onClick={() => {
-              setBitLength(8);
-              setMode("practice");
-            }}
-            className="w-full mb-3 px-4 py-3 rounded-xl bg-black text-white hover:opacity-90"
-          >
-            Practice Mode (No Time Limit)
-          </button>
-          <button
-            onClick={() => {
-              setBitLength(4);
-              setMode("timed4_15");
-            }}
-            className="w-full mb-3 px-4 py-3 rounded-xl border hover:bg-gray-50"
-          >
-            4-bit Timed (15s per round)
-          </button>
-          <button
-            onClick={() => {
-              setBitLength(4);
-              setMode("timed4_10");
-            }}
-            className="w-full mb-3 px-4 py-3 rounded-xl border hover:bg-gray-50"
-          >
-            4-bit Timed (10s per round)
-          </button>
-          <button
-            onClick={() => {
-              setBitLength(8);
-              setMode("timed8_15");
-            }}
-            className="w-full mb-3 px-4 py-3 rounded-xl border hover:bg-gray-50"
-          >
-            8-bit Timed (15s per round)
-          </button>
-          <button
-            onClick={() => {
-              setBitLength(8);
-              setMode("timed8_10");
-            }}
-            className="w-full px-4 py-3 rounded-xl border hover:bg-gray-50"
-          >
-            8-bit Timed (10s per round)
-          </button>
-        </div>
+        <GameMode 
+        bitLength={setBitLength}
+        mode={setMode}/>
     );
   }
 
@@ -183,7 +139,7 @@ export default function BinaryGame() {
           Mode: <span className="font-medium">{mode}</span>
         </p>
 
-        {mode !== "practice" && (
+        {!mode.startsWith("practice") && (
           <div className="mt-3 text-right text-sm text-gray-700">
             ⏱️ Time Left: <span className="font-semibold">{timeLeft}s</span>
           </div>
@@ -223,7 +179,7 @@ export default function BinaryGame() {
           >
             Check
           </button>
-          {mode === "practice" && (
+          {mode.startsWith("practice") && (
             <>
               <button
                 onClick={generateTarget}
@@ -239,7 +195,7 @@ export default function BinaryGame() {
               </button>
             </>
           )}
-          {mode !== "practice" && (
+          {!mode.startsWith("practice") && (
             <button
               onClick={resetStats}
               className="ml-auto px-4 py-2 rounded-xl border hover:bg-gray-50"
@@ -249,7 +205,7 @@ export default function BinaryGame() {
           )}
         </div>
 
-        {mode !== "practice" && (
+        {!mode.startsWith("practice") && (
           <div className="mt-6 grid grid-cols-2 gap-4">
             <Stat label="Correct" value={correct} />
             <Stat label="Attempts" value={total} />
