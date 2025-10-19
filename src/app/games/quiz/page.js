@@ -93,7 +93,7 @@ export default function QuizReviewer() {
         <button
           key={index}
           onClick={() => handleAnswerSelect(index)}
-          className={`w-full text-left p-4 rounded-lg border transition-colors ${selectedAnswer === index
+          className={`w-full cursor-pointer text-left p-4 rounded-lg border transition-colors ${selectedAnswer === index
             ? "bg-white text-black font-bold"
             : "border-border hover:border-primary/50"
             }`}

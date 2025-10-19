@@ -5,7 +5,7 @@ export default function ButtonMode({bitLength, length, mode, modeType, modeTitle
               bitLength(length);
               mode(modeType);
             }}
-            className="w-full mb-3 px-4 py-3 rounded-xl bg-black text-white hover:opacity-90"
+            className="w-full mb-3 px-4 py-3 rounded-xl cursor-pointer bg-black text-white hover:opacity-90"
           >
             {modeTitle}
           </button>

@@ -130,7 +130,7 @@ export default function BinaryGame() {
           <h1 className="text-2xl font-bold tracking-tight">Binary Game</h1>
           <button
             onClick={goBack}
-            className="text-sm px-3 py-1 rounded-lg border hover:bg-gray-50"
+            className="text-sm px-3 cursor-pointer py-1 rounded-lg border hover:bg-gray-50"
           >
             ← Back
           </button>
@@ -175,7 +175,7 @@ export default function BinaryGame() {
         <div className="mt-5 flex flex-wrap gap-2">
           <button
             onClick={checkAnswer}
-            className="px-4 py-2 rounded-xl bg-black text-white hover:opacity-90 active:opacity-80"
+            className="px-4 py-2 rounded-xl cursor-pointer bg-black text-white hover:opacity-90 active:opacity-80"
           >
             Check
           </button>
@@ -183,13 +183,13 @@ export default function BinaryGame() {
             <>
               <button
                 onClick={generateTarget}
-                className="px-4 py-2 rounded-xl border hover:bg-gray-50"
+                className="px-4 py-2 cursor-pointer rounded-xl border hover:bg-gray-50"
               >
                 New Number
               </button>
               <button
                 onClick={() => setMessage(`ℹ️ Answer: ${toBinary(target)} is the binary for ${target}.`)}
-                className="px-4 py-2 rounded-xl border hover:bg-gray-50"
+                className="px-4 py-2 cursor-pointer rounded-xl border hover:bg-gray-50"
               >
                 Show Answer
               </button>
@@ -198,7 +198,7 @@ export default function BinaryGame() {
           {!mode.startsWith("practice") && (
             <button
               onClick={resetStats}
-              className="ml-auto px-4 py-2 rounded-xl border hover:bg-gray-50"
+              className="ml-auto px-4 cursor-pointer py-2 rounded-xl border hover:bg-gray-50"
             >
               Reset Stats
             </button>

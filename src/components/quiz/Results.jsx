@@ -11,7 +11,7 @@ export default function Results({
   children,
 }) {
   return (
-    <Card className="w-500 max-w-2xl p-8 bg-linear-65 from-purple-800 to-pink-800 text-white">
+    <Card className="w-500 max-w-2xl p-8 bg-linear-65 bg-slate-900 text-white">
       <h1 className="text-2xl font-semibold mb-6">The Results Are In!</h1>
 
       <div className="mb-8">
@@ -32,7 +32,7 @@ export default function Results({
           Review {reviewIndex + 1} of {randomQuiz.length}
         </p>
 
-        <div className="border rounded-lg p-6">
+        <div className="rounded-lg p-6">
           <p className="font-medium mb-4">
             {reviewIndex + 1}. {q.question}
           </p>

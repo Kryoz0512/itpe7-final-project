@@ -83,8 +83,8 @@ export default function TypingGame() {
 
   return (
     <div className="flex flex-col items-center justify-between min-h-screen bg-gray-950 rounded-3xl border-2 border-white text-white p-8 mb-5">
-      <h1 className="text-4xl font-bold mb-8 text-yellow-400">
-        ⚡ Typing Speed Test
+      <h1 className="text-6xl font-bold mb-8 text-yellow-400">
+        Typing Speed Test
       </h1>
 
       <WordList

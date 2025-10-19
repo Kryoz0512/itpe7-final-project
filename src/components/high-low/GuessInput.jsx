@@ -15,10 +15,10 @@ export default function GuessInput({ guess, onGuessChange, onSubmit, onRestart }
         className="text-center bg-white/90 text-black placeholder:text-gray-500"
       />
       <div className="flex justify-center gap-3">
-        <Button onClick={onSubmit} className="bg-purple-600 hover:bg-purple-700 text-white">
+        <Button onClick={onSubmit} className="cursor-pointer bg-purple-600 hover:bg-purple-700 text-white">
           Submit Guess
         </Button>
-        <Button variant="secondary" onClick={onRestart}>
+        <Button className="cursor-pointer" variant="secondary" onClick={onRestart}>
           Reset
         </Button>
       </div>

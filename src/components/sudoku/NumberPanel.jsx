@@ -10,7 +10,7 @@ export default function NumberPanel({ handleNumberClickFunction }) {
                     <button
                     key={num}
                     onClick={() => handleNumberClickFunction(num)}
-                    className="border-2 border-white rounded-lg px-3 py-1 text-xl hover:bg-white hover:text-black transition"
+                    className="border-2 cursor-pointer border-white rounded-lg px-3 py-1 text-xl hover:bg-white hover:text-black transition"
                     >
                     {num}
                     </button>

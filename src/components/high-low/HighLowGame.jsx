@@ -101,7 +101,7 @@ export default function HighLowGame() {
           </p>
           <Button
             onClick={handleRestart}
-            className="bg-green-500 hover:bg-green-600 text-white"
+            className="bg-green-500 cursor-pointer hover:bg-green-600 text-white"
           >
             Play Again
           </Button>
