@@ -1,4 +1,4 @@
-    import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import NumberPanel from "./NumberPanel";
 import NewGameButton from "./NewGameButton";
 import Board from "./Board";

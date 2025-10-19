@@ -1,5 +1,3 @@
-
-
 export default function Board({ game, selectedCell, setSelectedCell }) {
   return (
     <div className="flex flex-col items-center bg-black/20 p-2 border-2 border-white rounded-lg">
