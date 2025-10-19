@@ -1,6 +1,11 @@
 "use client";
 
+import Game from "@/components/binary/Game";
 import GameMode from "@/components/binary/GameMode";
+import Header from "@/components/binary/Header";
+import Message from "@/components/binary/Message";
+import Practice from "@/components/binary/Practice";
+import { time } from "motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function BinaryGame() {
@@ -46,7 +51,7 @@ export default function BinaryGame() {
           setTimeout(() => {
             generateTarget();
             startTimer();
-          }, 5000);
+          }, 3000);
           return 0;
         }
         return t - 1;
@@ -118,110 +123,46 @@ export default function BinaryGame() {
 
   if (!mode) {
     return (
-        <GameMode 
+      <GameMode
         bitLength={setBitLength}
-        mode={setMode}/>
+        mode={setMode} />
     );
   }
 
   return (
-      <div className="w-full max-w-xl rounded-2xl shadow-lg border-2 bg-white p-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-tight">Binary Game</h1>
-          <button
-            onClick={goBack}
-            className="text-sm px-3 py-1 rounded-lg border hover:bg-gray-50"
-          >
-            ← Back
-          </button>
-        </div>
-        <p className="text-sm text-gray-600 mt-1">
-          Mode: <span className="font-medium">{mode}</span>
-        </p>
+    <div className="w-full max-w-xl rounded-2xl shadow-lg border-2 bg-white p-6">
+      <Header 
+      goBack={goBack}
+      mode={mode}
+      timeLeft={timeLeft}
+      />
 
-        {!mode.startsWith("practice") && (
-          <div className="mt-3 text-right text-sm text-gray-700">
-            ⏱️ Time Left: <span className="font-semibold">{timeLeft}s</span>
-          </div>
-        )}
+      <Game
+        target={target}
+        bitLength={bitLength}
+        inputRef={inputRef}
+        guess={guess}
+        handleChange={handleChange}
+        handleKeyDown={handleKeyDown}
+      />
 
-        <div className="mt-6">
-          <p className="text-gray-500 text-sm">Decimal</p>
-          <p className="text-4xl font-extrabold tabular-nums">{target}</p>
-        </div>
+      <Message message={message} />
 
-        <label className="block mt-6 text-sm font-medium text-gray-700">
-          Your {bitLength}-bit binary guess
-        </label>
-        <input
-          ref={inputRef}
-          value={guess}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          placeholder={`e.g., ${bitLength === 8 ? "00011010" : "0010"}`}
-          className="mt-2 w-full font-mono text-lg tracking-wider border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-black"
-          inputMode="numeric"
-          autoComplete="off"
-          autoCorrect="off"
-          spellCheck={false}
-        />
-
-        {message && (
-          <div className="mt-4 text-sm">
-            <div className="p-3 rounded-lg bg-gray-100">{message}</div>
-          </div>
-        )}
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          <button
-            onClick={checkAnswer}
-            className="px-4 py-2 rounded-xl bg-black text-white hover:opacity-90 active:opacity-80"
-          >
-            Check
-          </button>
-          {mode.startsWith("practice") && (
-            <>
-              <button
-                onClick={generateTarget}
-                className="px-4 py-2 rounded-xl border hover:bg-gray-50"
-              >
-                New Number
-              </button>
-              <button
-                onClick={() => setMessage(`ℹ️ Answer: ${toBinary(target)} is the binary for ${target}.`)}
-                className="px-4 py-2 rounded-xl border hover:bg-gray-50"
-              >
-                Show Answer
-              </button>
-            </>
-          )}
-          {!mode.startsWith("practice") && (
-            <button
-              onClick={resetStats}
-              className="ml-auto px-4 py-2 rounded-xl border hover:bg-gray-50"
-            >
-              Reset Stats
-            </button>
-          )}
-        </div>
-
-        {!mode.startsWith("practice") && (
-          <div className="mt-6 grid grid-cols-2 gap-4">
-            <Stat label="Correct" value={correct} />
-            <Stat label="Attempts" value={total} />
-            <Stat label="Streak" value={streak} />
-            <Stat label="Best Streak" value={bestStreak} />
-          </div>
+      <div className="mt-5 flex flex-wrap gap-2">
+        <button
+          onClick={checkAnswer}
+          className="px-4 py-2 rounded-xl bg-black text-white hover:opacity-90 active:opacity-80"
+        >
+          Check
+        </button>
+        {mode.startsWith("practice") && (
+          <Practice 
+          generateTarget={generateTarget} 
+          setMessage={setMessage}
+          toBinary={toBinary}
+          target={target}/>
         )}
       </div>
-  );
-}
-
-function Stat({ label, value }) {
-  return (
-    <div className="p-4 rounded-xl bg-gray-50">
-      <p className="text-xs text-gray-500">{label}</p>
-      <p className="text-xl font-semibold tabular-nums">{value}</p>
     </div>
   );
 }
