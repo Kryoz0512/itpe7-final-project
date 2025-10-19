@@ -4,6 +4,11 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import * as motion from "motion/react-client"
+import SequenceGrid from "./SequenceGrid"
+import Countdown from "./Countdown"
+import SequenceStats from "./SequenceStats"
+import StartScreen from "./StartScreen"
+import GameOver from "./GameOver"
 
 export default function SequenceMemoryGame() {
 
@@ -105,42 +110,14 @@ export default function SequenceMemoryGame() {
                 <p className="text-pink-300">Watch and repeat the pattern!</p>
             </div>
 
-            {countdown !== null && (
-                <div className="flex justify-center items-center py-16">
-                    <div className="text-8xl font-bold text-blue-500 animate-pulse">{countdown}</div>
-                </div>
-            )}
+            <Countdown value={countdown} />
 
             {/* Show stats when playing */}
-            {isPlaying && !isGameOver && countdown === null && (
-                <div className="flex justify-center gap-8 text-center">
-                    <div>
-                        <p className="text-4xl text-pink-300">Level</p>
-                        <p className="text-3xl font-bold text-pink-300">{level}</p>
-                    </div>
-                    <div>
-                        <p className="text-4xl text-pink-300">Rounds</p>
-                        <p className="text-3xl font-bold text-pink-300">{rounds}</p>
-                    </div>
-                </div>
-            )}
+            {isPlaying && !isGameOver && countdown === null && <SequenceStats level={level} rounds={rounds} />}
 
             {/* Game grid */}
             {isPlaying && !isGameOver && countdown === null && (
-                <div className="flex justify-center">
-                    <div className="grid gap-3" style={{ gridTemplateColumns: `repeat(${gridSize}, 100px)` }}>
-                        {Array.from({ length: totalBoxes }).map((_, i) => (
-                            <button
-                                key={i}
-                                onClick={() => handleClick(i)}
-                                className={`
-                  w-[100px] h-[100px] rounded-lg transition-all
-                  ${activeBox === i ? "bg-blue-500 scale-95" : "bg-gray-300 hover:bg-gray-400"}
-                `}
-                            />
-                        ))}
-                    </div>
-                </div>
+                <SequenceGrid gridSize={gridSize} totalBoxes={totalBoxes} activeBox={activeBox} disabled={isShowingPattern} onCellClick={handleClick} />
             )}
 
             {/* Status text */}
@@ -151,36 +128,10 @@ export default function SequenceMemoryGame() {
             )}
 
             {/* Start screen */}
-            {!isPlaying && !isGameOver && (
-                <motion.div
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.1 }}
-                    className="text-center py-8">
-                    <Button onClick={startGame} size="lg">
-                        Start Game
-                    </Button>
-                </motion.div>
-            )}
+            {!isPlaying && !isGameOver && <StartScreen onStart={startGame} />}
 
             {/* Game over screen */}
-            {isGameOver && (
-                <div className="text-center space-y-4 py-8">
-                    <h2 className="text-6xl font-bold text-red-500">Game Over!</h2>
-                    <p className="text-lg text-pink-500">
-                        You completed <span className="font-bold">{rounds}</span> rounds
-                    </p>
-                    <p className="text-white text-xl">Reached level {level}</p>
-                    <motion.div
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.1 }}
-                    >
-
-                        <Button onClick={startGame} size="lg">
-                            Play Again
-                        </Button>
-                    </motion.div>
-                </div>
-            )}
+            {isGameOver && <GameOver rounds={rounds} level={level} onPlayAgain={startGame} />}
         </Card>
     )
 }
