@@ -36,8 +36,9 @@ export default function GameMode({ bitLength, mode }) {
   return (
     <div className="w-full max-w-sm rounded-2xl shadow-lg bg-white p-6 text-center">
       <h1 className="text-2xl font-bold mb-4">Choose Game Mode</h1>
-      {gameModes.map(gameMode => (
+      {gameModes.map((gameMode, index) => (
         <ButtonMode
+        key={index}
         bitLength={bitLength}
         length={gameMode.length}
         mode={mode}

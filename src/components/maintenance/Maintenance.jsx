@@ -1,4 +1,4 @@
-import { LoaderCircle } from 'lucide-react'
+import { Construction, LoaderCircle, Rocket } from 'lucide-react'
 import React from 'react'
 
 export default function Maintenance() {
@@ -6,7 +6,7 @@ export default function Maintenance() {
     <div className='flex flex-col justify-center items-center text-white'>
         <div>
 
-        <LoaderCircle className='h-70 w-70 animate-spin'/>
+        <Construction className='h-70 w-70'/>
         </div>
         <h1 className='text-4xl'>Under maintenance</h1>
     </div>
