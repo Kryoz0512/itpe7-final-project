@@ -94,7 +94,7 @@ export default function TypingGame() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-between min-h-screen bg-gray-950 text-white p-8 mb-5">
+        <div className="flex flex-col items-center justify-between min-h-screen bg-gray-950 rounded-3xl border-2 border-white text-white p-8 mb-5">
             <h1 className="text-4xl font-bold mb-8 text-yellow-400">⚡ Typing Speed Test</h1>
 
             <div className="max-w-2xl text-xl leading-relaxed mb-6 text-gray-400 text-center h-24 whitespace-pre-wrap break-words">

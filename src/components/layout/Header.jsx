@@ -32,9 +32,6 @@ export default function Header() {
           <Link href="/games" className="hover:text-pink-300 transition">
             Games
           </Link>
-          <Link href="/" className="hover:text-pink-300 transition">
-            Contact
-          </Link>
         </nav>
       </div>
     </header>

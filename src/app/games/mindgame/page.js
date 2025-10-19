@@ -64,7 +64,7 @@ export default function Mindgame() {
 
   if (!isPlaying) {
     return (
-      <div className="bg-card flex flex-col gap-5 rounded-xl border p-8 text-center bg-gradient-to-br from-purple-800 to-pink-800">
+      <div className="bg-card flex flex-col gap-5 rounded-xl border p-8 text-center bg-gradient-to-br from-purple-950 to-pink-300">
         <h1 className="text-2xl font-bold text-white">Number Memory</h1>
         <p className="mb-8 text-white">Memorize the number and type it back!</p>
         {gameOver && (
@@ -81,7 +81,7 @@ export default function Mindgame() {
   }
 
   return (
-    <div className="bg-card flex flex-col gap-5 rounded-xl border p-8 text-center bg-gradient-to-br from-purple-800 to-pink-800 min-h-[230px] min-w-[345px] justify-center">
+    <div className="bg-card flex flex-col gap-5 rounded-xl border p-8 text-center bg-gradient-to-br from-purple-950 to-pink-300 min-h-[230px] min-w-[345px] justify-center">
       <h1 className="text-2xl font-semibold text-white">Level {level}</h1>
 
       {showNumber ? (

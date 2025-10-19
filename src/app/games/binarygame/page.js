@@ -125,7 +125,7 @@ export default function BinaryGame() {
   }
 
   return (
-      <div className="w-full max-w-xl rounded-2xl shadow-lg bg-white p-6">
+      <div className="w-full max-w-xl rounded-2xl shadow-lg border-2 bg-white p-6">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold tracking-tight">Binary Game</h1>
           <button
