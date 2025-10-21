@@ -12,9 +12,9 @@ export default function Quiz({
   children
 }) {
   return (
-    <Card className="w-500 max-w-2xl p-8 bg-linear-65 bg-slate-900 text-white">
+    <Card className="w-500 max-w-2xl p-8 bg-linear-65 bg-white text-black shadow">
       <div>
-        <p className="text-sm text-black font-bold bg-white inline px-4 py-1 rounded-2xl">
+        <p className="text-sm text-white font-bold bg-black inline px-4 py-1 rounded-2xl">
           Question {currentQuestion + 1} of {randomQuiz.length}
         </p>
         <h1 className="text-xl font-semibold">{question.question}</h1>
@@ -24,7 +24,7 @@ export default function Quiz({
 
       <div className="flex gap-3">
         <Button
-          className="border-1 bg-transparent flex-1 cursor-pointer hover:bg-white hover:text-black"
+          className="flex-1 bg-black text-white  cursor-pointer hover:bg-white hover:text-black"
           onClick={onClick2}
           disabled={currentQuestion === 0}
           variant="outline"
@@ -34,7 +34,7 @@ export default function Quiz({
 
         {currentQuestion === randomQuiz.length - 1 ? (
           <Button
-            className="border-1 bg-transparent flex-1 cursor-pointer hover:bg-white hover:text-black"
+            className="flex-1 border bg-black text-white cursor-pointer hover:bg-white hover:text-black"
               onClick={onClick3}
             disabled={selectedAnswers.some((a) => a === null)}
           >
@@ -42,7 +42,7 @@ export default function Quiz({
           </Button>
         ) : (
           <Button
-            className="border-1 bg-transparent flex-1 cursor-pointer hover:bg-white hover:text-black"
+            className="flex-1 cursor-pointer bg-black text-white hover:bg-white hover:text-black border"
             onClick={onClick4}
           >
             Next

@@ -13,6 +13,6 @@ export default function TimerBar({ timer }) {
       : "w-1/5";
 
   return (
-    <p className={`bg-white h-2 rounded-xl duration-1000 ease-linear ${widthClass}`}></p>
+    <p className={`bg-black h-2 rounded-xl duration-1000 ease-linear ${widthClass}`}></p>
   );
 }
