@@ -5,7 +5,7 @@ export default function Header({goBack, mode, timeLeft}) {
         <h1 className="text-2xl font-bold tracking-tight">Binary Game</h1>
         <button
           onClick={goBack}
-          className="text-sm px-3 py-1 rounded-lg border hover:bg-gray-50"
+          className="text-sm px-3 py-1 cursor-pointer rounded-lg border hover:bg-gray-50"
         >
           ← Back
         </button>

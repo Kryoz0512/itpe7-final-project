@@ -14,7 +14,7 @@ export default function GameBoard({
   onReset,
 }) {
   return (
-    <div className="bg-card flex flex-col gap-5 rounded-2xl border bg-white p-20 text-center min-h-[230px] min-w-[345px] justify-center shadow">
+    <div className="flex flex-col gap-5 rounded-2xl border bg-white p-20 text-center min-h-[230px] min-w-[345px] justify-center shadow">
       <h1 className="text-2xl font-semibold text-black">Level {level}</h1>
 
       {showNumber ? (

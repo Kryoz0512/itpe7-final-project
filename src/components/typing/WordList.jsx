@@ -28,7 +28,7 @@ export const WORDS = [
 
 export default function WordList({ words, currentIndex, isCorrectTyping }) {
   return (
-    <div className="max-w-2xl text-xl leading-relaxed mb-6 text-gray-400 text-center h-24 whitespace-pre-wrap break-words">
+    <div className="max-w-2xl text-xl leading-relaxed mb-6 text-gray-400 text-center h-50 whitespace-pre-wrap break-words ">
       {words.map((word, i) => {
         let colorClass = "";
         if (i === currentIndex && isCorrectTyping === true)

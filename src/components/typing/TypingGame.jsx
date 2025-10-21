@@ -99,6 +99,11 @@ export default function TypingGame() {
         isCorrectTyping={isCorrectTyping}
         finished={finished}
       />
+      <button
+        onClick={handleRestart}
+        className="px-6 py-2 bg-transparent text-yellow-400 border-2 border-yellow-400 rounded-lg font-semibold hover:bg-yellow-400 hover:border-white hover:text-black cursor-pointer transition">
+        Restart
+      </button>
       <StatsPanel timeLeft={timeLeft} wpm={wpm} accuracy={accuracy} />
       <ResultScreen finished={finished} handleRestart={handleRestart} />
     </div>

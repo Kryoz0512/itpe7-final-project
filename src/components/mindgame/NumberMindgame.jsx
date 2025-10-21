@@ -15,6 +15,7 @@ export default function NumberMindgame() {
   const [timer, setTimer] = useState(5);
   const [gameOver, setGameOver] = useState(false);
 
+
   useEffect(() => {
     let countdown;
     if (isPlaying && showNumber && timer > 0) {
@@ -66,6 +67,7 @@ export default function NumberMindgame() {
         onStart={() => handleStart(1)}
         onReset={handleReset}
         gameOver={gameOver}
+        level={level}
       />
     );
   }
