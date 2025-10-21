@@ -23,7 +23,7 @@ export default function HighLowGame() {
   if (target === null) {
     return (
       <GameCard>
-        <h1 className="text-2xl font-bold text-white">Loading game...</h1>
+        <h1 className="text-2xl font-bold font-mono text-black">Loading game...</h1>
       </GameCard>
     );
   }
@@ -62,7 +62,7 @@ export default function HighLowGame() {
 
   return (
     <GameCard>
-      <h1 className="text-2xl font-bold text-white">Number Guessing Game</h1>
+      <h1 className="text-2xl font-bold text-black">Number Guessing Game</h1>
 
       <AnimatePresence mode="wait">
         <motion.p
@@ -71,7 +71,7 @@ export default function HighLowGame() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="text-white text-base"
+          className="text-black text-base"
         >
           {message}
         </motion.p>
@@ -96,7 +96,7 @@ export default function HighLowGame() {
           transition={{ duration: 0.3 }}
           className="space-y-5"
         >
-          <p className="text-lg font-medium text-green-300">
+          <p className="text-lg font-medium text-green-500">
             You guessed the number <span className="font-bold">{target}</span>{" "}
             in <span className="font-bold">{attempts}</span> tries!
           </p>

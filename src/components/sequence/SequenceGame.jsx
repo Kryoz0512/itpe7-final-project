@@ -104,10 +104,10 @@ export default function SequenceMemoryGame() {
     }
 
     return (
-        <Card className="w-200 h-full max-w-2xl p-8 space-y-6 border-0 bg-transparent">
+        <Card className="w-200 h-full max-w-2xl p-8 space-y-6 border-0 bg-white">
             <div className="text-center space-y-2">
-                <h1 className="text-4xl font-bold text-pink-700">Sequence Memory</h1>
-                <p className="text-pink-600">Watch and repeat the pattern!</p>
+                <h1 className="text-4xl font-bold text-black">Sequence Memory</h1>
+                <p className="text-black">Watch and repeat the pattern!</p>
             </div>
 
             <Countdown value={countdown} />
@@ -122,7 +122,7 @@ export default function SequenceMemoryGame() {
 
             {/* Status text */}
             {isPlaying && !isGameOver && countdown === null && (
-                <p className="text-center font-medium text-pink-300 text-4xl">
+                <p className="text-center font-medium text-black text-4xl">
                     {isShowingPattern ? "Watch the pattern..." : "Your turn!"}
                 </p>
             )}

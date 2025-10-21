@@ -76,7 +76,7 @@ export default function QuizReviewer() {
         <Button
           onClick={handleRestart}
           variant="outline"
-          className="w-full bg-transparent"
+          className="w-full bg-black text-white hover:bg-white hover:text-black"
         >
           Start a new Quiz!
         </Button>
@@ -94,7 +94,7 @@ export default function QuizReviewer() {
           key={index}
           onClick={() => handleAnswerSelect(index)}
           className={`w-full cursor-pointer text-left p-4 rounded-lg border transition-colors ${selectedAnswer === index
-            ? "bg-white text-black font-bold"
+            ? "bg-black text-white font-bold"
             : "border-border hover:border-primary/50"
             }`}
         >

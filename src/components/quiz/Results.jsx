@@ -11,8 +11,8 @@ export default function Results({
   children,
 }) {
   return (
-    <Card className="w-500 max-w-2xl p-8 bg-linear-65 bg-slate-900 text-white">
-      <h1 className="text-2xl font-semibold mb-6">The Results Are In!</h1>
+    <Card className="w-500 max-w-2xl p-8 bg-white text-black">
+      <h1 className="text-2xl font-bold mb-6">The Results Are In!</h1>
 
       <div className="mb-8">
         <p className="text-lg mb-2">

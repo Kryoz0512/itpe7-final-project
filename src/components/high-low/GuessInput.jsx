@@ -17,7 +17,7 @@ export default function GuessInput({ guess, onGuessChange, onSubmit, onRestart }
         className="text-center bg-white/90 text-black placeholder:text-gray-500"
       />
       <div className="flex justify-center gap-3">
-        <Button onClick={onSubmit} className="cursor-pointer bg-purple-600 hover:bg-purple-700 text-white">
+        <Button onClick={onSubmit} className="cursor-pointer bg-black text-white hover:bg-white hover:text-black border">
           Submit Guess
         </Button>
         <Button className="cursor-pointer" variant="secondary" onClick={onRestart}>
