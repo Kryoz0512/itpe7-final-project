@@ -8,7 +8,7 @@ export default function Maintenance() {
 
         <Construction className='h-70 w-70'/>
         </div>
-        <h1 className='text-4xl'>Under maintenance</h1>
+        <h1 className='text-4xl'>Under maintenance! Our developer has been splatted</h1>
     </div>
   )
 }
